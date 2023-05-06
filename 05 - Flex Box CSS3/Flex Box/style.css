@@ -1,0 +1,402 @@
+/* Questão 1 */
+/* #pai{
+    flex-direction: column;
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    align-items: end;
+}
+
+.filho{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+} */
+
+/* Questão 2 */
+/* #pai{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    align-items: end;
+}
+
+.filho{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+} */
+
+/* Questão 3 */
+/* #pai{
+    flex-direction: row-reverse;
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
+}
+
+.filho{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+} */
+
+/* Questão 4 */
+/* #pai{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.filho{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+} */
+
+/* Questão 5 */
+/* #pai2{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    align-items: center;
+    padding: 2rem;
+}
+
+.filho2{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+} */
+
+/* Questão 6 */
+#pai2{
+    flex-direction: row-reverse;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    align-items: center;
+    padding: 2rem;
+}
+
+.filho2{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+}
+
+/* Questão 7 */
+/* #pai{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.filho{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+} */
+
+/* Questão 8 */
+/* #pai{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filho{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+} */
+
+/* Questão 9 */
+/* #pai{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    height: 36rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.filho{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+} */
+
+/* Questão 11 */
+#pai{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    height: 36rem;
+    align-items: stretch;
+    background-color: aqua;
+}
+
+.filho{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    flex: 1;
+}
+
+/* Questão 12 */
+/* #pai3{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    height: 20rem;
+    padding: 2rem;
+    background-color: blueviolet;
+    align-items: start;
+}
+
+.filho3{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+}
+
+.filho3:nth-child(2){
+    background-color: red;
+} */
+
+/* Questão 13 */
+/* #pai3{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    height: 20rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: blueviolet;
+}
+
+.filho3{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+}
+
+.filho3:nth-child(2){
+    align-self: flex-start;
+} */
+
+/* Questão 14 */
+/* #pai3{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    height: 20rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: blueviolet;
+}
+
+.filho3{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+}
+
+.filho3:nth-child(2){
+    background-color: red;
+    order: -1;
+} */
+
+/* Questão 15 */
+/* #pai3{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    height: 20rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: blueviolet;
+}
+
+.filho3{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+}
+
+.filho3:nth-child(2){
+    background-color: red;
+}
+
+.filho3:nth-child(3){
+    order: -1;
+} */
+
+/* Questão 16 */
+/* #pai3{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    height: 20rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: blueviolet;
+}
+
+.filho3{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+}
+
+.filho3:nth-child(2){
+    background-color: red;
+    align-self: self-start;
+} */
+
+/* Questão 17 */
+#pai3{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    height: 20rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: blueviolet;
+}
+
+.filho3{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+}
+
+.filho3:nth-child(2){
+    flex-grow: 1;
+    align-items: stretch;
+    background-color: red;
+}
+
+/* Questão 18 */
+/* #pai3{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    height: 20rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: blueviolet;
+}
+
+.filho3{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+}
+
+.filho3:nth-child(2){
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.filho3:nth-child(4){
+    display: none;
+} */
+
+/* Questão 19 */
+/* #pai3{
+    flex-direction: row;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: auto;
+    height: 20rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: blueviolet;
+}
+
+.filho3{
+    background-color: blue;
+    text-align: center;
+    color: antiquewhite;
+    height: 9rem;
+    width: 9rem;
+}
+
+.filho3:nth-child(1), .filho3:nth-child(3){
+    flex-grow: 2;
+}
+
+.filho3:nth-child(2){
+    flex-grow: 1;
+}
+
+.filho3:nth-child(4){
+    display: none;
+} */
