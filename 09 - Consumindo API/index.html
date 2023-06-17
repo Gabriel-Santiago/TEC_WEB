@@ -1,0 +1,174 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumindo API</title>
+</head>
+
+<body>
+    <h2>Informações do Usuário</h2>
+
+    <div id="user-info"></div>
+
+    <h2>Criar Usuário</h2>
+
+    <form id="create-form">
+        <input type="text" id="first_name" placeholder="First Name">
+        <input type="text" id="last_name" placeholder="Last Name">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Criar Usuário</button>
+    </form>
+
+    <h2>Atualizar Usuário</h2>
+
+    <form id="update-form">
+        <input type="number" id="user-id" placeholder="User ID">
+        <input type="text" id="update-first_name" placeholder="First Name">
+        <input type="text" id="update-last_name" placeholder="Last Name">
+        <input type="email" id="update-email" placeholder="Email">
+        <button type="submit">Atualizar Usuário</button>
+    </form>
+
+    <h2>Excluir Usuário</h2>
+
+    <form id="delete-form">
+        <input type="number" id="delete-user-id" placeholder="User ID">
+        <button type="submit">Excluir Usuário</button>
+    </form>
+
+    <h2>Buscar Usuário</h2>
+
+    <form id="get-form">
+        <input type="number" id="get-user-id" placeholder="User ID">
+        <button type="submit">Buscar Usuário</button>
+    </form>
+
+    <script>
+        const userInfo = document.getElementById('user-info');
+        const createForm = document.getElementById('create-form');
+        const updateForm = document.getElementById('update-form');
+        const deleteForm = document.getElementById('delete-form');
+        const getForm = document.getElementById('get-form');
+
+        createForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const firstName = document.getElementById('first_name').value;
+            const lastName = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;
+
+            const userData = {
+                first_name: firstName,
+                last_name: lastName,
+                email: email
+            };
+
+            createUser(userData);
+        });
+
+        updateForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userId = document.getElementById('user-id').value;
+            const firstName = document.getElementById('update-first_name').value;
+            const lastName = document.getElementById('update-last_name').value;
+            const email = document.getElementById('update-email').value;
+
+            const userData = {
+                first_name: firstName,
+                last_name: lastName,
+                email: email
+            };
+
+            updateUser(userId, userData);
+        });
+
+        deleteForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userId = document.getElementById('delete-user-id').value;
+
+            deleteUser(userId);
+        });
+
+        getForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userId = document.getElementById('get-user-id').value;
+
+            getUser(userId);
+        });
+
+        function displayUserInfo(user) {
+            const userContainer = document.createElement('div');
+            userContainer.innerHTML = `
+                <h3>ID: ${user.id}</h3>
+                <p>First Name: ${user.first_name}</p>
+                <p>Last Name: ${user.last_name}</p>
+                <p>Email: ${user.email}</p>
+                <img src="${user.avatar}" alt="User Avatar" width="100">
+            `;
+            userContainer.setAttribute('data-id', user.id);
+
+            userInfo.appendChild(userContainer);
+        }
+
+        function getUser(userId) {
+            fetch(`https://reqres.in/api/users/${userId}`)
+                .then(response => response.json())
+                .then(data => {
+                    displayUserInfo(data.data);
+                })
+                .catch(error => console.log(error));
+        }
+
+        function createUser(userData) {
+            fetch('https://reqres.in/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    displayUserInfo(data);
+                })
+                .catch(error => console.log(error));
+        }
+
+        function updateUser(userId, userData) {
+            fetch(`https://reqres.in/api/users/${userId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    displayUserInfo(data);
+                })
+                .catch(error => console.log(error));
+        }
+
+        function deleteUser(userId) {
+            fetch(`https://reqres.in/api/users/${userId}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        const userContainer = document.querySelector(`div[data-id="${userId}"]`);
+                        if (userContainer) {
+                            userContainer.remove();
+                        }
+                        console.log('Usuário excluído com sucesso');
+                    } else {
+                        console.log('Falha ao excluir o usuário');
+                    }
+                })
+                .catch(error => console.log(error));
+        }
+    </script>
+</body>
+
+</html>
